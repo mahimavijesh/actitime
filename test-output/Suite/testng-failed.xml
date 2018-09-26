@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test thread-count="5" name="firefoxTest(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="nodeUrl" value="http://localhost:4444/wd/hub/"/>
+    <parameter name="appUrl" value="https://demo.actitime.com/login.do"/>
+    <classes>
+      <class name="com.actitime.tests.ValidLoginLogout">
+        <methods>
+          <include name="testValidLoginLogout"/>
+          <include name="preCondition"/>
+          <include name="postCondition"/>
+        </methods>
+      </class> <!-- com.actitime.tests.ValidLoginLogout -->
+      <class name="com.actitime.tests.VerifyVersionTest">
+        <methods>
+          <include name="preCondition"/>
+          <include name="postCondition"/>
+          <include name="testVerifyVersionTest"/>
+        </methods>
+      </class> <!-- com.actitime.tests.VerifyVersionTest -->
+      <class name="com.actitime.tests.VerifyBuildTest">
+        <methods>
+          <include name="preCondition"/>
+          <include name="testVerifyBuild"/>
+          <include name="postCondition"/>
+        </methods>
+      </class> <!-- com.actitime.tests.VerifyBuildTest -->
+      <class name="com.actitime.tests.InvalidLoginTest">
+        <methods>
+          <include name="preCondition"/>
+          <include name="testInvalidLogin"/>
+          <include name="postCondition"/>
+        </methods>
+      </class> <!-- com.actitime.tests.InvalidLoginTest -->
+    </classes>
+  </test> <!-- firefoxTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
